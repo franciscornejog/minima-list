@@ -6,8 +6,8 @@ An app that can serve as a guide to a minimalist lifestyle.
 * CSS
 * Javascript
 
-## Authors
+## Author
 * **Francisco Cornejo-Garcia**
 
 ## License
-This project is licensed under the [MIT](https://github.com/minima-list/LICENSE.md) License.
+This project is licensed under the [MIT](https://github.com/fcornejog/minima-list/blob/master/LICENSE.md) License.
