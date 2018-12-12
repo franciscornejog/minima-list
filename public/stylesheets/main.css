@@ -1,0 +1,48 @@
+/* DEFAULT */
+body {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: #2f3542;
+    margin: 30px;
+}
+
+/* LINKS */
+a:link, a:visited, a:active {
+    color: #2f3542;
+    text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* HEADER */
+.menu { text-align: center; }
+.menu li {
+    display: inline;
+    padding-right: 15px;
+}
+
+/* LANDING PAGE - BODY */
+.billboard {
+    margin-top: 280px;
+    text-align: center;
+}
+.bar { color: #2ed573; }
+.title, .subtitle {
+    font-size: 50px;
+    margin: 20px 0;
+}
+.description { line-height: 1.5; }
+
+/* FORM */
+.username, .password, .submit {
+    border: none;
+    border-bottom: 2px solid #2f3542;
+    display: block;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 25px;
+    padding: 20px;
+}
+.submit {
+    background-color: transparent;
+    border-bottom: 2px solid #2ed573;
+    color: #2f3542;
+}
