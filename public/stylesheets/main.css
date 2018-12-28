@@ -32,6 +32,25 @@ nav li {
 }
 .description { line-height: 1.5; }
 
+/* DEMO & ITEMS PAGE */
+.demo-header .subtitle {
+    display: inline-block;
+}
+
+/* ITEM CARD */
+.item .card {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #2f3542;
+}
+.item .name {
+    font-size: 40px;
+    display: inline;
+}
+.item .card a {
+    float: right;
+}
+
 /* FORM */
 input[name="username"], input[name="password"], .submit {
     border: none;
