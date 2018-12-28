@@ -11,7 +11,7 @@ var passport_local_mongoose = require("passport-local-mongoose"),
     app                     = express();
 
 // Models 
-var Item = require("./models/items"),
+var Item = require("./models/item"),
     User = require("./models/user");
 
 // Routes 
@@ -37,7 +37,7 @@ app.use(require("express-session")({
     secret: "Nancy Guerrero",
     resave: false,
     saveUninitialized: false
-});
+}));
 
 // Passport Setup
 app.use(passport.initialize());
