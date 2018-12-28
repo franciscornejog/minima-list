@@ -52,16 +52,23 @@ nav li {
 }
 
 /* FORM */
-input[name="username"], input[name="password"], .submit {
+input, .submit {
     border: none;
     border-bottom: 2px solid #2f3542;
     display: block;
     font-family: 'Roboto Mono', monospace;
     font-size: 25px;
     padding: 20px;
+    background-color: transparent;
+    color: #2f3542;
 }
 .submit {
-    background-color: transparent;
     border-bottom: 2px solid #2ed573;
+}
+.btn {
+    background-color: transparent;
     color: #2f3542;
+    border-bottom: 2px solid #D50000;
+    padding: 20px;
+    margin-top: 10px;
 }
