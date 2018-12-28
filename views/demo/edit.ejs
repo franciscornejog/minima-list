@@ -1,11 +1,11 @@
 <% include ../partials/header %>
 <h2 class="subtitle">edit item</h2>
-<form action="/items/<%= item._id %>?_method=PUT" method="POST">
+<form action="/demo/<%= item._id %>?_method=PUT" method="POST">
     <input type="text" name="item[name]" value="<%= item.name %>">
     <input type="text" name="item[description]" value="<%= item.description %>">
     <input type="number" name="item[quantity]" min="1" step="1" value="<%= item.quantity %>">
     <input type="text" name="item[notes]" value="<%= item.notes %>">
     <button class="submit">submit</button>
 </form>
-<a href="/items/<%= item._id %>">go back</a>
+<a href="/demo/<%= item._id %>">go back</a>
 <% include ../partials/footer %>
