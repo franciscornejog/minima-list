@@ -1,0 +1,11 @@
+<% include ../partials/header %>
+<h2 class="subtitle">add new item</h2>
+<form action="/items" method="POST">
+    <input type="text" name="name" placeholder="name">
+    <input type="text" name="description" placeholder="description">
+    <input type="number" name="quantity" min="1" step="1" placeholder="quantity">
+    <input type="text" name="notes" placeholder="notes">
+    <button class="submit">submit</button>
+</form>
+<a href="/items">go back</a>
+<% include ../partials/footer %>
