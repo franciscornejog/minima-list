@@ -53,14 +53,14 @@ var Item = mongoose.model("Item", itemSchema);
 
 // LANDING PAGE
 app.get("/", function(request, response) {
-    response.redirect("/index");
+    response.redirect("/landing");
 });
-app.get("/index", function(request, response) {
+app.get("/landing", function(request, response) {
     Item.find({}, function(error, items) {
         if(error) {
             console.log("Cannot find items");
         } else {
-            response.render("index", {items: items});
+            response.render("landing", {items: items});
         }
     });
 });
@@ -72,7 +72,7 @@ app.get("/about", function(request, response) {
 
 // DEMO PAGE
 app.get("/demo", function(request, response) {
-    response.render("demo");
+    response.render("items/demo");
 });
 
 // LOGIN PAGE
