@@ -14,8 +14,8 @@ a:link, a:visited, a:active {
 a:hover { text-decoration: underline; }
 
 /* HEADER */
-.menu { text-align: center; }
-.menu li {
+nav { text-align: center; }
+nav li {
     display: inline;
     padding-right: 15px;
 }
@@ -33,7 +33,7 @@ a:hover { text-decoration: underline; }
 .description { line-height: 1.5; }
 
 /* FORM */
-.username, .password, .submit {
+input[name="username"], input[name="password"], .submit {
     border: none;
     border-bottom: 2px solid #2f3542;
     display: block;
