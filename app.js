@@ -15,7 +15,7 @@ var Item = require("./models/item"),
     User = require("./models/user");
 
 // Routes 
-var itemRoutes = require("./routes/items"),
+var demoRoutes = require("./routes/demo"),
     indexRoutes = require("./routes/index");
 
 // Database Connection
@@ -56,7 +56,7 @@ app.use(function(req, res, next) {
 
 // Routes Setup
 app.use(indexRoutes);
-app.use(itemRoutes);
+app.use("/demo", demoRoutes);
 
 // Server Connection
 var port = process.env.PORT || 3000;
