@@ -7,11 +7,11 @@ body {
 }
 
 /* LINKS */
-a:link, a:visited, a:active {
+nav a:link, nav a:visited, nav a:active {
     color: #2f3542;
     text-decoration: none;
 }
-a:hover { text-decoration: underline; }
+nav a:hover { text-decoration: underline; }
 
 /* HEADER */
 nav { text-align: center; }
@@ -47,12 +47,9 @@ nav li {
     font-size: 40px;
     display: inline;
 }
-.item .card a {
-    float: right;
-}
 
 /* FORM */
-input, .submit {
+input, .btn {
     border: none;
     border-bottom: 2px solid #2f3542;
     display: block;
@@ -61,14 +58,19 @@ input, .submit {
     padding: 20px;
     background-color: transparent;
     color: #2f3542;
+    text-decoration: none;
 }
-.submit {
-    border-bottom: 2px solid #2ed573;
+input[value="submit"] {
+    display: inline;
+    border-color: #2ed573;
+}
+input[value="delete"] {
+    border-color: #d50000;
+}
+input[value="edit"] {
+    border-color: #1E88EA;
 }
 .btn {
-    background-color: transparent;
-    color: #2f3542;
-    border-bottom: 2px solid #D50000;
-    padding: 20px;
-    margin-top: 10px;
+    display: inline-block;
+    border-color: #ff9f1a;
 }
