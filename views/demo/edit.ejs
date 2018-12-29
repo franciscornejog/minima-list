@@ -5,7 +5,7 @@
     <input type="text" name="item[description]" value="<%= item.description %>">
     <input type="number" name="item[quantity]" min="1" step="1" value="<%= item.quantity %>">
     <input type="text" name="item[notes]" value="<%= item.notes %>">
+    <a class="btn" href="/demo/<%= item._id %>">go back</a>
     <input type="submit" value="submit">
-    <a class="btn" href="/demo">go back</a>
 </form>
 <% include ../partials/footer %>

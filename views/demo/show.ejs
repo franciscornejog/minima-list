@@ -4,11 +4,11 @@
     <p class="description"><%= item.description %></p>
     <p class="quantity"><%= item.quantity %></p>
     <p class="notes"><%= item.notes %></p>
-    <p class="created"><%= item.created %></p>
+    <p class="created"><%= item.created.toLocaleDateString() %></p>
+    <a class="btn" href="/demo">go back</a>
     <a class="btn" href="/demo/<%= item._id %>/edit">edit</a>
-    <form action="/demo/<%= item._id %>?_method=DELETE" method="POST">
+    <form class="form-delete" action="/demo/<%= item._id %>?_method=DELETE" method="POST">
         <input type="submit" value="delete">
-        <a class="btn" href="/demo">go back</a>
     </form>
 </section>
 <% include ../partials/footer %>

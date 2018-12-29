@@ -64,13 +64,20 @@ input[value="submit"] {
     display: inline;
     border-color: #2ed573;
 }
-input[value="delete"] {
-    border-color: #d50000;
+.form-delete {
+    display: inline;
 }
-input[value="edit"] {
-    border-color: #1E88EA;
+input[value="delete"] {
+    display: inline;
+    border-color: #d50000;
 }
 .btn {
     display: inline-block;
+    border-color: #1E88EA;
+}
+.btn[href="/demo"] {
+    display: inline-block;
     border-color: #ff9f1a;
 }
+/* ALERTS */
+
