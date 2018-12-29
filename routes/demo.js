@@ -28,9 +28,7 @@ router.post("/", function(req, res) {
     var description = req.body.description;
     var quantity = req.body.quantity;
     var notes = req.body.notes;
-    var created = {
-
-    };
+    var created = req.body.created;
     var newItem = {
         name: name,
         description: description,
@@ -89,7 +87,7 @@ router.delete("/:id", function(req, res) {
             req.flash("error", err.message);
             res.redirect("/demo");
         } else {
-            req.flash("success", "Item deleted");
+            req.flash("success", "item deleted");
             res.redirect("/demo");
         }
     });
