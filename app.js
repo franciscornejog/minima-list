@@ -15,8 +15,8 @@ var Item = require("./models/item"),
     User = require("./models/user");
 
 // Routes 
-var demoRoutes = require("./routes/demo"),
-    indexRoutes = require("./routes/index");
+var indexRoutes      = require("./routes/index"),
+    collectionRoutes = require("./routes/collection");
 
 // Database Connection
 mongoose.set("useNewUrlParser", true);
@@ -34,7 +34,7 @@ app.use(flash());
 app.use(express.static("public"));
 app.use(express_sanitizer());
 app.use(require("express-session")({
-    secret: "Nancy Guerrero",
+    secret: "some_secret",
     resave: false,
     saveUninitialized: false
 }));
@@ -56,7 +56,7 @@ app.use(function(req, res, next) {
 
 // Routes Setup
 app.use(indexRoutes);
-app.use("/demo", demoRoutes);
+app.use("/collection", collectionRoutes);
 
 // Server Connection
 var port = process.env.PORT || 3000;
