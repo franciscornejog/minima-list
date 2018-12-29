@@ -18,23 +18,28 @@ router.get("/", function(req, res) {
 });
 
 // New Item Route
-router.get("/new", function(req, res) {
+router.get("/new", middleware.isLoggedIn, function(req, res) {
     res.render("demo/new");
 });
 
 // Create Item Route
-router.post("/", function(req, res) {
+router.post("/", middleware.isLoggedIn, function(req, res) {
     var name = req.body.name;
     var description = req.body.description;
     var quantity = req.body.quantity;
     var notes = req.body.notes;
     var created = req.body.created;
+    var author = {
+        id: req.user._id,
+        username: req.user.username
+    };
     var newItem = {
         name: name,
         description: description,
         quantity: quantity,
         notes: notes,
-        created: created
+        created: created,
+        author: author
     };
     Item.create(newItem, function(err, newlyCreated) {
         if(err || !newlyCreated) {
@@ -57,7 +62,7 @@ router.get("/:id", function(req, res) {
 });
 
 // Edit Item Route
-router.get("/:id/edit", function(req, res) {
+router.get("/:id/edit", middleware.isLoggedIn, function(req, res) {
     Item.findById(req.params.id, function(err, foundItem) {
         if(err || !foundItem) {
             req.flash("error", err.message);
@@ -69,7 +74,7 @@ router.get("/:id/edit", function(req, res) {
 });
 
 // Update Item Route
-router.put("/:id", function(req, res) {
+router.put("/:id", middleware.isLoggedIn, function(req, res) {
     Item.findByIdAndUpdate(req.params.id, req.body.item, function(err, updatedItem) {
         if(err || !updatedItem) {
             req.flash("error", err.message);
@@ -81,7 +86,7 @@ router.put("/:id", function(req, res) {
 });
 
 // Destroy Item Route
-router.delete("/:id", function(req, res) {
+router.delete("/:id", middleware.isLoggedIn, function(req, res) {
     Item.findByIdAndRemove(req.params.id, function(err) {
         if(err) {
             req.flash("error", err.message);

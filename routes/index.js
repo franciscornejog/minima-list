@@ -33,7 +33,7 @@ router.post("/signup", function(req, res) {
         }
         passport.authenticate("local")(req, res, function() {
             req.flash("success", "welcome to minima-list, " + user.username);
-            res.redirect("/demo");
+            res.redirect("/collection");
         });
     });
 });
@@ -45,7 +45,7 @@ router.get("/login", function(req, res) {
 
 // Create Login Route - Middleware
 router.post("/login", passport.authenticate("local", {
-    successRedirect: "/demo",
+    successRedirect: "/collection",
     failureRedirect: "/login"
 }), function(req, res) {});
 

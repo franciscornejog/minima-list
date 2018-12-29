@@ -11,6 +11,15 @@ var itemSchema = new mongoose.Schema({
     {
         type: Date, 
         default: Date.now
+    },
+    author:
+    {
+        id:
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+        },
+        username: String
     }
 });
 
