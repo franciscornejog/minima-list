@@ -80,4 +80,13 @@ input[value="delete"] {
     border-color: #ff9f1a;
 }
 /* ALERTS */
-
+.alert {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.alert-success {
+    color: #2ed573;
+}
+.alert-danger {
+    color: #d50000;
+}
