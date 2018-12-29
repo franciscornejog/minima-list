@@ -75,7 +75,7 @@ input[value="delete"] {
     display: inline-block;
     border-color: #1E88EA;
 }
-.btn[href="/demo"] {
+.btn[href="/collection"] {
     display: inline-block;
     border-color: #ff9f1a;
 }
