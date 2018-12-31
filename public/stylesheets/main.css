@@ -64,9 +64,6 @@ input[value="submit"] {
     display: inline;
     border-color: #2ed573;
 }
-.form-delete {
-    display: inline;
-}
 input[value="delete"] {
     display: inline;
     border-color: #d50000;
@@ -79,14 +76,12 @@ input[value="delete"] {
     display: inline-block;
     border-color: #ff9f1a;
 }
-/* ALERTS */
-.alert {
+.form-delete { display: inline; }
+
+/* Flash Messages */
+.flash {
     text-align: center;
     margin-bottom: 20px;
 }
-.alert-success {
-    color: #2ed573;
-}
-.alert-danger {
-    color: #d50000;
-}
+.flash-error { color: #d50000; }
+.flash-success { color: #2ed573; }

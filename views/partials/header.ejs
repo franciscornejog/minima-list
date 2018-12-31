@@ -8,14 +8,14 @@
 </head>
 <body>
 <header>
-    <section class="flash">
+    <section>
         <% if(error && error.length > 0) { %>
-            <div class="alert alert-danger" role="alert">
+            <div class="flash flash-error" role="alert">
                 <%= error %>
             </div>
         <% } %>
         <% if(success && success.length > 0) { %>
-            <div class="alert alert-success" role="alert">
+            <div class="flash flash-success" role="alert">
                 <%= success %>
             </div>
         <% } %>
