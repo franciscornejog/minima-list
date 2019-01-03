@@ -1,4 +1,4 @@
-/* DEFAULT */
+/* Default */
 body {
     font-family: 'Roboto Mono', monospace;
     font-size: 20px;
@@ -6,21 +6,19 @@ body {
     margin: 30px;
 }
 
-/* LINKS */
+/* Header */
 nav a:link, nav a:visited, nav a:active {
     color: #2f3542;
     text-decoration: none;
 }
 nav a:hover { text-decoration: underline; }
-
-/* HEADER */
 nav { text-align: center; }
 nav li {
     display: inline;
     padding-right: 15px;
 }
 
-/* LANDING PAGE - BODY */
+/* Landing Page */
 .billboard {
     margin-top: 280px;
     text-align: center;
@@ -32,12 +30,10 @@ nav li {
 }
 .description { line-height: 1.5; }
 
-/* DEMO & ITEMS PAGE */
-.demo-header .subtitle {
-    display: inline-block;
-}
+/* Demo & Items Page */
+.demo-header .subtitle { display: inline-block; }
 
-/* ITEM CARD */
+/* Item Card */
 .item .card {
     padding: 10px;
     margin: 10px;
@@ -48,7 +44,7 @@ nav li {
     display: inline;
 }
 
-/* FORM */
+/* Form */
 input, .btn {
     border: none;
     border-bottom: 2px solid #2f3542;
