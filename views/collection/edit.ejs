@@ -1,5 +1,5 @@
 <% include ../partials/header %>
-<h2 class="subtitle">edit item</h2>
+<h2>edit item</h2>
 <form action="/collection/<%= item._id %>?_method=PUT" method="POST">
     <input type="text" name="item[name]" value="<%= item.name %>">
     <input type="text" name="item[description]" value="<%= item.description %>">

@@ -1,13 +1,13 @@
 <% include ../partials/header %>
 <section class="item-header">
-    <h2 class="subtitle">collection</h2>
+    <h2>collection</h2>
     <a class="btn" href="/collection/new">add new item</a>
 </section>
 <section class="item">
     <% items.forEach(function(item) { %>
         <% if(currentUser && item.author.id.equals(currentUser._id)) { %>
             <div class="card">
-                <h4 class="name"><%= item.name %></h4>
+                <h4><%= item.name %></h4>
                 <a class="btn" href="/collection/<%= item._id %>">more info</a>
             </div>
         <% } %>
