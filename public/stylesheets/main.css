@@ -1,42 +1,39 @@
-/* Default */
+/* CUSTOM STYLES ----------------------------*/
 body {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 20px;
     color: #2f3542;
-    margin: 30px;
+    font-family: 'Roboto Mono', monospace;
+    margin: 30px auto;
+    text-align: center;
 }
-
-/* Header */
-nav a:link, nav a:visited, nav a:active {
+h1, h2 { 
+    font-size: 50px; 
+    margin: 15px 0;
+}
+h3, li { font-size: 20px; }
+p { line-height: 1.5; }
+a {
+    cursor: pointer;
+    display: block;
     color: #2f3542;
     text-decoration: none;
 }
-nav a:hover { text-decoration: underline; }
-nav { text-align: center; }
+
+/* MENU -------------------------------*/
 nav li {
-    display: inline;
+    display: inline-block;
     padding-right: 15px;
 }
+nav a:hover { text-decoration: underline; }
 
-/* Landing Page */
-.billboard {
-    margin-top: 280px;
-    text-align: center;
-}
+/* LANDING PAGE -----------------------*/
+.billboard { margin-top: 280px; }
 .bar { color: #2ed573; }
-.title, .subtitle {
-    font-size: 50px;
-    margin: 20px 0;
-}
-.description { line-height: 1.5; }
 
-/* Demo & Items Page */
-.demo-header .subtitle { display: inline-block; }
-
-/* Item Card */
+/* ITEM CARD --------------------------*/
 .item .card {
+    display: block;
+    width: 300px;
     padding: 10px;
-    margin: 10px;
     border: 1px solid #2f3542;
 }
 .item .name {
@@ -44,8 +41,15 @@ nav li {
     display: inline;
 }
 
-/* Form */
+/* FORM -------------------------------*/
+form {
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    width: 400px;
+}
 input, .btn {
+    width: 100%;
     border: none;
     border-bottom: 2px solid #2f3542;
     display: block;
@@ -74,7 +78,7 @@ input[value="delete"] {
 }
 .form-delete { display: inline; }
 
-/* Flash Messages */
+/* FLASH MESSAGES ---------------------*/
 .flash {
     text-align: center;
     margin-bottom: 20px;
