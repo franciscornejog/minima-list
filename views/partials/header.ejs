@@ -8,18 +8,16 @@
 </head>
 <body>
 <header>
-    <section>
-        <% if(error && error.length > 0) { %>
-            <div class="flash flash-error" role="alert">
-                <%= error %>
-            </div>
-        <% } %>
-        <% if(success && success.length > 0) { %>
-            <div class="flash flash-success" role="alert">
-                <%= success %>
-            </div>
-        <% } %>
-    </section>
+    <% if(error && error.length > 0) { %>
+        <div class="flash flash-error" role="alert">
+            <%= error %>
+        </div>
+    <% } %>
+    <% if(success && success.length > 0) { %>
+        <div class="flash flash-success" role="alert">
+            <%= success %>
+        </div>
+    <% } %>
     <nav>
         <ul>
             <li><a href="/">index</a></li>
