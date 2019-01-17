@@ -55,10 +55,6 @@ nav a:hover { text-decoration: underline; }
 }
 
 /* FORM -------------------------------*/
-form {
-    margin: 0 auto;
-    width: 100%;
-}
 input, .btn {
     display: block;
     width: 100%;
@@ -71,23 +67,29 @@ input, .btn {
     border: none;
     border-bottom: 2px solid #2f3542;
 }
-input[value="submit"] { 
+.submit, .info, .go-back, .delete { 
+    cursor: pointer;
+    background-size: 100% 200%;
+    transition: background-position 250ms ease-out;
+}
+.submit:hover, .info:hover, .go-back:hover, .delete:hover { background-position: 0 100%; }
+.submit {
     border-color: #2ed573; 
-    background-color: #B9F6CA;
+    background-image: linear-gradient(to top, #2ed573 50%, #b9f6ca 50%);
 }
-input[value="delete"] { 
+.delete {
     border-color: #d50000; 
-    background-color: #FFCDD2;
+    background-image: linear-gradient(to top, #d50000 50%, #ffcdd2 50%); 
 }
-.btn { 
+.info { 
     display: inline-block;
-    border-color: #1E88EA; 
-    background-color: #E1F5FE;
     padding: 12px 0;
+    border-color: #1e88ea;
+    background-image: linear-gradient(to top, #1e88ea 50%, #e1f5fe 50%);
 }
-.btn[href="/collection"] { 
+.go-back {
     border-color: #ff9f1a; 
-    background-color: #FFE0B2;
+    background-image: linear-gradient(to top, #ff9f1a 50%, #ffe0b2 50%);
 }
 .form-delete { display: inline; }
 
@@ -110,8 +112,10 @@ input[value="delete"] {
         font-size: 50px;
         margin: 20px 0;
     }
+    .buttons { display: flex; }
     nav li { display: inline-block; }
     input, .btn, nav li, .slogan, .item .flash, .name, .description { font-size: 25px; }
     input, .btn { padding: 22px 20px; }
     .btn { padding: 22px 0; }
 }
+
