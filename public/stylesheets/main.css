@@ -1,43 +1,24 @@
 /* DEFAULT STYLES ---------------------*/
 body {
-    color: #2f3542;
-    font-family: 'Roboto Mono', monospace;
-    text-align: center;
     min-width: 345px;
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15px;
+    color: #2f3542;
 }
 .title { 
+    margin: 15px 0;
     font-size: 30px; 
-    margin: 5px 0;
 }
-.slogan, .name, .description { font-size: 15px; }
 .description { 
-    text-align: left;
-    line-height: 1.5; 
     margin: 0 20px;
+    text-align: left;
+    font-size: 12px;
+    line-height: 1.5; 
 }
-
-/* LINKS ------------------------------*/
-a {
-    cursor: pointer;
-    display: block;
-    color: #2f3542;
-    text-decoration: none;
-}
-
-/* MENU -------------------------------*/
-nav li {
-    font-size: 15px;
-    display: block;
-    margin: 25px 18px;
-}
-nav a:hover { text-decoration: underline; }
 
 /* FLASH MESSAGES ---------------------*/
-.flash {
-    font-size: 15px;
-    text-align: center;
-    padding: 20px;
-}
+.flash { padding: 20px; }
 .flash-error { 
     color: #d50000; 
     background-color: #FFCDD2;
@@ -46,6 +27,17 @@ nav a:hover { text-decoration: underline; }
     color: #2ed573; 
     background-color: #B9F6CA;
 }
+
+/* MENU -------------------------------*/
+nav a {
+    display: inline-block;
+    color: #2f3542;
+    text-decoration: none;
+    padding: 12px 10px;
+}
+nav a:hover { text-decoration: underline; }
+.dropdown-content, .full-size-nav { display: none; }
+.show { display: block; }
 
 /* LANDING PAGE -----------------------*/
 .billboard { margin-top: 200px; }
@@ -61,18 +53,18 @@ input, .btn {
     padding: 12px 10px;
     color: #2f3542;
     font-family: 'Roboto Mono', monospace;
-    font-size: 15px;
     text-decoration: none;
     background-color: transparent;
     border: none;
     border-bottom: 2px solid #2f3542;
 }
-.submit, .info, .go-back, .delete { 
+.btn { 
     cursor: pointer;
     background-size: 100% 200%;
     transition: background-position 250ms ease-out;
+    padding: 12px 0;
 }
-.submit:hover, .info:hover, .go-back:hover, .delete:hover { background-position: 0 100%; }
+.btn:hover { background-position: 0 100%; }
 .submit {
     border-color: #2ed573; 
     background-image: linear-gradient(to top, #2ed573 50%, #b9f6ca 50%);
@@ -98,24 +90,23 @@ input, .btn {
     display: grid;
     grid-gap: 40px;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    margin: 15px 15px;
+    margin: 15px;
 }
-.item {
-    width: 100%; 
-    background-color: #E1F5FE;
-}
-.name { padding-top: 12px; }
+.item { background-color: #E1F5FE; }
+.name { margin: 12px; }
 
 /* MIN-WIDTH: 390PX -------------------*/
 @media all and (min-width: 565px ) {
+    body { font-size: 25px; }
     .title {
         font-size: 50px;
-        margin: 20px 0;
+        margin: 25px 0;
     }
+    .description { font-size: 20px; }
     .buttons { display: flex; }
-    nav li { display: inline-block; }
-    input, .btn, nav li, .slogan, .item .flash, .name, .description { font-size: 25px; }
-    input, .btn { padding: 22px 20px; }
+    .full-size-nav, li { display: inline-block; }
+    .dropdown-nav { display: none; }
+    input { padding: 22px 20px; }
     .btn { padding: 22px 0; }
 }
 
