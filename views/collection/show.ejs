@@ -9,6 +9,6 @@
     <a class="btn info" href="/collection/<%= item._id %>/edit">edit</a>
 </div>
 <form class="form-delete" action="/collection/<%= item._id %>?_method=DELETE" method="POST">
-    <input class="delete" type="submit" value="delete">
+    <input class="btn delete" type="submit" value="delete">
 </form>
 <% include ../partials/footer %>

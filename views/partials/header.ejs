@@ -21,8 +21,23 @@
             <%= success %>
         </div>
     <% } %>
-    <nav>
+    <nav class="full-size-nav">
         <ul>
+            <li><a href="/">index</a></li>
+            <li><a href="/about">about</a></li>
+            <% if(!currentUser) { %>
+                <li><a href="/signup">sign up</a></li>
+                <li><a href="/login">login</a></li>
+            <% } else { %>
+                <li><a href="/collection">collection</a></li>
+                <li><a href="/logout">logout</a></li>
+            <% } %>
+        </ul>
+        
+    </nav>
+    <nav class="dropdown-nav">
+        <button onclick="dropdown()" class="btn dropbtn">menu</button>
+        <ul class="dropdown-content" id="dropdown-content">
             <li><a href="/">index</a></li>
             <li><a href="/about">about</a></li>
             <% if(!currentUser) { %>
