@@ -1,9 +1,12 @@
 <% include ../partials/header %>
-<h1 class="title"><%= item.name %></h1>
-<p class="description"><%= item.description %></p>
-<p class="quantity"><%= item.quantity %></p>
-<p class="notes"><%= item.notes %></p>
-<p class="created"><%= item.created.toLocaleDateString() %></p>
+<section class="item-info">
+    <h1 class="name"><%= item.name %></h1>
+    <p class="created"><%= 13  %></p>
+    <p class="label"> days ago</p>
+    <p class="description"><%= item.description %></p>
+    <p class="quantity"><%= item.quantity %></p>
+    <p class="notes"><%= item.notes %></p>
+</section>
 <div class="buttons">
     <a class="btn go-back" href="/collection">go back</a>
     <a class="btn info" href="/collection/<%= item._id %>/edit">edit</a>
