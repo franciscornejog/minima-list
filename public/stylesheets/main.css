@@ -10,7 +10,7 @@ body {
     margin: 15px 0;
     font-size: 30px; 
 }
-.description { 
+.about-info { 
     margin: 0 20px;
     text-align: left;
     font-size: 12px;
@@ -93,8 +93,39 @@ input, .btn {
     margin: 15px;
 }
 .item { background-color: #E1F5FE; }
-.name { margin: 12px; }
+.item .name { margin: 12px; }
 
+/* ITEM INFO --------------------------*/
+.item-info {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+    padding: 30px;
+    font-size: 20px;
+    text-align: left;
+}
+.item-info .name {
+    font-size: 30px;
+}
+.created, .label { text-align: center; }
+.created {
+    font-size: 120px;
+    grid-column-start: 2;
+    grid-row: -1 / 3;
+}
+.label {
+    grid-column-start: 2;
+    grid-row: 3 / 4;
+}
+.description {
+
+}
+.quantity {
+}
+.notes {
+    grid-column: span 2;
+}
 /* MIN-WIDTH: 390PX -------------------*/
 @media all and (min-width: 565px ) {
     body { font-size: 25px; }
@@ -102,7 +133,7 @@ input, .btn {
         font-size: 50px;
         margin: 25px 0;
     }
-    .description { font-size: 20px; }
+    .about-info { font-size: 20px; }
     .buttons { display: flex; }
     .full-size-nav, li { display: inline-block; }
     .dropdown-nav { display: none; }
