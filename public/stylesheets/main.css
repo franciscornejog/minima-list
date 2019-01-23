@@ -108,8 +108,8 @@ input, .btn {
 .item-info .name {
     font-size: 30px;
 }
-.created, .label { text-align: center; }
-.created {
+.last-used, .label { text-align: center; }
+.last-used {
     font-size: 120px;
     grid-column-start: 2;
     grid-row: -1 / 3;
