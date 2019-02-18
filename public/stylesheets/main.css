@@ -1,4 +1,4 @@
-/* DEFAULT STYLES ---------------------*/
+/* Default Styles ---------------------*/
 body {
     min-width: 345px;
     text-align: center;
@@ -17,7 +17,7 @@ body {
     line-height: 1.5; 
 }
 
-/* FLASH MESSAGES ---------------------*/
+/* Flash Messages ---------------------*/
 .flash { padding: 20px; }
 .flash-error { 
     color: #d50000; 
@@ -28,7 +28,7 @@ body {
     background-color: #B9F6CA;
 }
 
-/* MENU -------------------------------*/
+/* Menu -------------------------------*/
 nav a {
     display: inline-block;
     color: #2f3542;
@@ -39,14 +39,14 @@ nav a:hover { text-decoration: underline; }
 .dropdown-content, .full-size-nav { display: none; }
 .show { display: block; }
 
-/* LANDING PAGE -----------------------*/
+/* Landing Page -----------------------*/
 .billboard { margin-top: 200px; }
 .underscore { 
     color: #2ed573; 
     background-color: #B9F6CA;
 }
 
-/* FORM -------------------------------*/
+/* Form -------------------------------*/
 input, .btn {
     display: block;
     width: 100%;
@@ -85,7 +85,7 @@ input, .btn {
 }
 .form-delete { display: inline; }
 
-/* ITEM CARD --------------------------*/
+/* Item Card --------------------------*/
 .items {
     display: grid;
     grid-gap: 40px;
@@ -95,7 +95,7 @@ input, .btn {
 .item { background-color: #E1F5FE; }
 .item .name { margin: 12px; }
 
-/* ITEM INFO --------------------------*/
+/* Item Info --------------------------*/
 .item-info {
     display: grid;
     grid-gap: 20px;
@@ -121,7 +121,7 @@ input, .btn {
 .notes {
     grid-column: span 2;
 }
-/* MIN-WIDTH: 390PX -------------------*/
+/* Min-Width: 390px -------------------*/
 @media all and (min-width: 565px ) {
     body { font-size: 25px; }
     .title {
