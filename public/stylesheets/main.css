@@ -118,11 +118,6 @@ input, .btn {
     grid-column-start: 2;
     grid-row: 3 / 4;
 }
-.description {
-
-}
-.quantity {
-}
 .notes {
     grid-column: span 2;
 }
