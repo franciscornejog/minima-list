@@ -1,5 +1,6 @@
 // Packages
-var express = require("express"),
+var moment  = require("moment"),
+    express = require("express"),
     router  = express.Router();
 
 // Models & Middleware
@@ -12,7 +13,7 @@ router.get("/", middleware.isLoggedIn, function(req, res) {
         if(err) {
             req.flash("error", err.message);
         } else {
-            res.render("collection", {items: allItems});
+            res.render("collection", {items: allItems, moment: moment});
         }
     });
 });
@@ -56,7 +57,7 @@ router.get("/:id", middleware.isLoggedIn, function(req, res) {
             req.flash("error", err.message);
             res.redirect("/collection");
         } else {
-            res.render("collection/show", {item: foundItem});
+            res.render("collection/show", {item: foundItem, moment: moment});
         }
     });
 });
@@ -69,6 +70,22 @@ router.get("/:id/edit", middleware.isLoggedIn, function(req, res) {
             res.redirect("/collection");
         } else {
             res.render("collection/edit", {item: foundItem});
+        }
+    });
+});
+
+// Reset Item Route
+router.post("/:id/reset", middleware.isLoggedIn, function(req, res) {
+    Item.findById(req.params.id, function(err, foundItem) {
+        if(err || !foundItem) {
+            req.flash("error", err.message);
+            res.redirect("/collection");
+        } else {
+            foundItem.created = Date.now();
+            foundItem.save(function(err) {
+                foundItem.created = Date.now();
+            });
+            res.redirect("/collection");
         }
     });
 });

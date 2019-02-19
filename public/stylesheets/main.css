@@ -1,3 +1,15 @@
+/* Colors -----------------------------*
+ * Danger: #D50000
+ * Danger-Background: #FFCDD2
+ * Success: #2ED573
+ * Success-Background: #B9F6CA
+ * Info: #1592E6
+ * Info-Background: #E1F5FA
+ * Normal: #2F3542
+ * Normal-Border: #8F9299
+ * Normal-Background: #EAECF2
+ */
+
 /* Default Styles ---------------------*/
 body {
     min-width: 345px;
@@ -83,17 +95,31 @@ input, .btn {
     border-color: #ff9f1a; 
     background-image: linear-gradient(to top, #ff9f1a 50%, #ffe0b2 50%);
 }
-.form-delete { display: inline; }
+.form-button { display: inline; }
 
 /* Item Card --------------------------*/
 .items {
     display: grid;
-    grid-gap: 40px;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    margin: 15px;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    margin: 10px;
 }
-.item { background-color: #E1F5FE; }
-.item .name { margin: 12px; }
+.item { 
+    background-color: #EAECF2;
+}
+.item .name {
+    margin: 12px;
+    font-size: 25px;
+}
+.item p {
+    font-size: 10px;
+    margin: 10px;
+    text-align: center;
+}
+.item .days {
+    font-weight: 300;
+    font-size: 45px;
+}
 
 /* Item Info --------------------------*/
 .item-info {
@@ -128,6 +154,9 @@ input, .btn {
         font-size: 50px;
         margin: 25px 0;
     }
+    .item .name { font-size: 40px; }
+    .item p { font-size: 25px; }
+    .item .days { font-size: 70px; }
     .about-info { font-size: 20px; }
     .buttons { display: flex; }
     .full-size-nav, li { display: inline-block; }
