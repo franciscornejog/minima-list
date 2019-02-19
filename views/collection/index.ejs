@@ -7,9 +7,14 @@
     <% items.forEach(function(item) { %>
         <% if(currentUser && item.author.id.equals(currentUser._id)) { %>
             <div class="item">
-                <h4 class="name"><%= item.name %></h4>
+                <h2 class="name"><%= item.name %></h4>
+                <p class="about-info">last used</p>
+                <h3 class="days"><%= moment().date() - moment(item.created).date() %></h3>
+                <p class="about-info">days ago</p>
                 <a class="btn info" href="/collection/<%= item._id %>">more info</a>
-		<a class="btn submit" href="#">use today</a>
+                <form class="form-button" action="/collection/<%= item._id %>/reset" method="POST">
+                    <input class="btn submit" type="submit" value="use today">
+                </form>
             </div>
         <% } %>
     <% }); %>
