@@ -1,11 +1,12 @@
-<% include ../partials/header %>
+<%- include('../partials/header.html'); %>
+
 <section class="item-header">
     <h1 class="title">collection</h1>
     <a class="btn info" href="/collection/new">add new item</a>
 </section>
 <section class="items">
-    <% items.forEach(function(item) { %>
-        <% if(currentUser && item.author.id.equals(currentUser._id)) { %>
+    <% items.forEach(item => { %>
+        <% if(user && item.author === user.username) { %>
             <div class="item">
                 <h2 class="name"><%= item.name %></h4>
                 <p class="about-info">last used</p>
@@ -19,4 +20,5 @@
         <% } %>
     <% }); %>
 </section>
-<% include ../partials/footer %>
+
+<%- include('../partials/footer.html'); %>

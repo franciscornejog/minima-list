@@ -1,59 +1,26 @@
-// Packages
-var passport = require("passport"),
-    express  = require("express"),
-    router   = express.Router();
+const express = require('express');
+const passport = require('../auth');
+const router = express.Router();
+const db = require('../db');
 
-// Models & Middleware
-var Item       = require("../models/item"),
-    User       = require("../models/user");
-var middleware = require("../middleware");
+// Show index page
+router.get('/', (req, res) => res.render('index'));
 
-// Show Landing Page
-router.get("/", function(req, res) {
-    res.render("landing");
-});
+// Show about page
+router.get('/about', (req, res) => res.render('about'));
 
-// Show About Page
-router.get("/about", function(req, res) {
-    res.render("about");
-});
+// Show sign up page
+router.get('/signup', (req, res) => res.render('signup'));
+router.post('/signup', db.createUser);
 
-// Show Register Form
-router.get("/signup", function(req, res) {
-    res.render("signup");
-});
+// Show login page
+router.get('/login', (req, res) => res.render('login'));
+router.post('/login', passport.auth);
 
-// New Register Route
-router.post("/signup", function(req, res) {
-    var newUser = new User({username: req.body.username});
-    User.register(newUser, req.body.password, function(err, user) {
-        if(err) {
-            req.flash("error", err.message);
-            return res.redirect("/signup");
-        }
-        passport.authenticate("local")(req, res, function() {
-            req.flash("success", "welcome to minima-list, " + user.username);
-            res.redirect("/collection");
-        });
-    });
-});
-
-// Show Login Form
-router.get("/login", function(req, res) {
-    res.render("login");
-});
-
-// Create Login Route - Middleware
-router.post("/login", passport.authenticate("local", {
-    successRedirect: "/collection",
-    failureRedirect: "/login"
-}), function(req, res) {});
-
-// Log Out Route
-router.get("/logout", function(req, res) {
-    req.logout();
-    req.flash("success", "logged out");
-    res.redirect("/");
+router.get('/logout', (req, res, next) => {
+    req.logout(err => next(err));
+    req.flash('success', 'logged out');
+    res.redirect('/');
 });
 
 module.exports = router;

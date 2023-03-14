@@ -1,4 +1,5 @@
-<% include ../partials/header %>
+<%- include('../partials/header.html'); %>
+
 <section class="item-info">
     <h1 class="name"><%= item.name %></h1>
     <p class="last-used"><%= moment(item.created).date() - moment().date() %></p>
@@ -14,4 +15,5 @@
 <form class="form-button" action="/collection/<%= item._id %>?_method=DELETE" method="POST">
     <input class="btn delete" type="submit" value="delete">
 </form>
-<% include ../partials/footer %>
+
+<%- include('../partials/footer.html'); %>

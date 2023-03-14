@@ -25,7 +25,7 @@
         <ul>
             <li><a href="/">index</a></li>
             <li><a href="/about">about</a></li>
-            <% if(!currentUser) { %>
+            <% if(!user) { %>
                 <li><a href="/signup">sign up</a></li>
                 <li><a href="/login">login</a></li>
             <% } else { %>
@@ -40,7 +40,7 @@
         <ul class="dropdown-content" id="dropdown-content">
             <li><a href="/">index</a></li>
             <li><a href="/about">about</a></li>
-            <% if(!currentUser) { %>
+            <% if(!user) { %>
                 <li><a href="/signup">sign up</a></li>
                 <li><a href="/login">login</a></li>
             <% } else { %>

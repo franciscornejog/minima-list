@@ -1,4 +1,5 @@
-<% include ../partials/header %>
+<%- include('../partials/header.html'); %>
+
 <h1 class="title">add new item</h1>
 <form action="/collection" method="POST">
     <input type="text" name="name" placeholder="name">
@@ -10,4 +11,5 @@
         <input class="btn submit" type="submit" value="submit">
     </div>
 </form>
-<% include ../partials/footer %>
+
+<%- include('../partials/footer.html'); %>
