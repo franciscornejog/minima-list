@@ -12,8 +12,8 @@
                 <p class="about-info">last used</p>
                 <h3 class="days"><%= moment().date() - moment(item.created).date() %></h3>
                 <p class="about-info">days ago</p>
-                <a class="btn info" href="/collection/<%= item._id %>">more info</a>
-                <form class="form-button" action="/collection/<%= item._id %>/reset" method="POST">
+                <a class="btn info" href="/collection/<%= item.id %>">more info</a>
+                <form class="form-button" action="/collection/<%= item.id %>/reset" method="POST">
                     <input class="btn submit" type="submit" value="use today">
                 </form>
             </div>

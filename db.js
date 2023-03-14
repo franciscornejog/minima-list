@@ -19,7 +19,14 @@ const getCollection = (req, res, next) => {
     const query = 'SELECT * FROM items WHERE author = $1';
     db.manyOrNone(query, [req.user.username])
     .then(data => res.render('collection', {items: data, moment: moment }))
-    .catch(err =>  next(err));
+    .catch(err => next(err));
+}
+
+const getItem = (req, res, next) => {
+    const query = 'SELECT * FROM items WHERE id = $1';
+    db.one(query, [req.params.id])
+    .then(data => res.render('collection/show', { item: data, moment: moment }))
+    .catch(err => next(err));
 }
 
 const createUser = (req, res, next) => {
@@ -36,5 +43,6 @@ const createUser = (req, res, next) => {
 module.exports = {
     db: db,
     getCollection: getCollection,
+    getItem: getItem,
     createUser: createUser,
 };
