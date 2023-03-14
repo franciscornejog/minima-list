@@ -1,28 +1,3 @@
-// Packages
-var moment  = require("moment"),
-    express = require("express"),
-    router  = express.Router();
-
-// Models & Middleware
-var Item       = require("../models/item");
-var middleware = require("../middleware");
-
-// Show Collection Page
-router.get("/", middleware.isLoggedIn, function(req, res) {
-    Item.find({}, function(err, allItems) {
-        if(err) {
-            req.flash("error", err.message);
-        } else {
-            res.render("collection", {items: allItems, moment: moment});
-        }
-    });
-});
-
-// New Item Route
-router.get("/new", middleware.isLoggedIn, function(req, res) {
-    res.render("collection/new");
-});
-
 // Create Item Route
 router.post("/", middleware.isLoggedIn, function(req, res) {
     var name = req.body.name;
@@ -47,18 +22,6 @@ router.post("/", middleware.isLoggedIn, function(req, res) {
             req.flash("error", err.message);
         }
         res.redirect("/collection");
-    });
-});
-
-// Show Item Route
-router.get("/:id", middleware.isLoggedIn, function(req, res) {
-    Item.findById(req.params.id, function(err, foundItem) {
-        if(err || !foundItem) {
-            req.flash("error", err.message);
-            res.redirect("/collection");
-        } else {
-            res.render("collection/show", {item: foundItem, moment: moment});
-        }
     });
 });
 
