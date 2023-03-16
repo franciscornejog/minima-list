@@ -9,7 +9,7 @@ router.post('/', auth.verify, db.createItem);
 router.get('/new', auth.verify, (req, res) => res.render('collection/new'));
 
 router.get('/:id', auth.verify, db.getItem);
-// router.delete('/:id', auth.verify, db.removeItem);
+router.delete('/:id', auth.verify, db.deleteItem);
 
 // router.get('/:id/edit', auth.verify, db.updateItem);
 

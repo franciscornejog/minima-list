@@ -1,30 +1,3 @@
-// Create Item Route
-router.post("/", middleware.isLoggedIn, function(req, res) {
-    var name = req.body.name;
-    var description = req.body.description;
-    var quantity = req.body.quantity;
-    var notes = req.body.notes;
-    var created = req.body.created;
-    var author = {
-        id: req.user._id,
-        username: req.user.username
-    };
-    var newItem = {
-        name: name,
-        description: description,
-        quantity: quantity,
-        notes: notes,
-        created: created,
-        author: author
-    };
-    Item.create(newItem, function(err, newlyCreated) {
-        if(err || !newlyCreated) {
-            req.flash("error", err.message);
-        }
-        res.redirect("/collection");
-    });
-});
-
 // Edit Item Route
 router.get("/:id/edit", middleware.isLoggedIn, function(req, res) {
     Item.findById(req.params.id, function(err, foundItem) {
@@ -65,17 +38,3 @@ router.put("/:id", middleware.isLoggedIn, function(req, res) {
     });
 });
 
-// Destroy Item Route
-router.delete("/:id", middleware.isLoggedIn, function(req, res) {
-    Item.findByIdAndRemove(req.params.id, function(err) {
-        if(err) {
-            req.flash("error", err.message);
-            res.redirect("/collection");
-        } else {
-            req.flash("success", "item deleted");
-            res.redirect("/collection");
-        }
-    });
-});
-
-module.exports = router;

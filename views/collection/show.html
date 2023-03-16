@@ -2,7 +2,7 @@
 
 <section class="item-info">
     <h1 class="name"><%= item.name %></h1>
-    <p class="last-used"><%= moment(item.created).date() - moment().date() %></p>
+    <p class="last-used"><%= moment().date() - moment(item.created).date() %></p>
     <p class="label">days ago</p>
     <p class="description"><%= item.description %></p>
     <p class="quantity"><%= item.quantity %></p>
@@ -10,9 +10,9 @@
 </section>
 <div class="buttons">
     <a class="btn go-back" href="/collection">go back</a>
-    <a class="btn info" href="/collection/<%= item._id %>/edit">edit</a>
+    <a class="btn info" href="/collection/<%= item.id %>/edit">edit</a>
 </div>
-<form class="form-button" action="/collection/<%= item._id %>?_method=DELETE" method="POST">
+<form class="form-button" action="/collection/<%= item.id %>?_method=DELETE" method="POST">
     <input class="btn delete" type="submit" value="delete">
 </form>
 

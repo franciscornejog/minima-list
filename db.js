@@ -46,6 +46,19 @@ const createItem = (req, res, next) => {
     });
 }
 
+const deleteItem = (req, res, next) => {
+    const query = 'DELETE FROM items WHERE id = $1;';
+    db.none(query, [req.params.id])
+    .then(() => {
+        req.flash('success', 'item deleted');
+        res.redirect('/collection');
+    })
+    .catch(err => {
+        req.flash('error', err.message);
+        res.redirect('/collection');
+    });
+}
+
 const createUser = (req, res, next) => {
     const query = 'INSERT INTO users(username, password) VALUES($1, $2);'; 
     db.none(query, [req.body.username, req.body.password])
@@ -62,5 +75,6 @@ module.exports = {
     getCollection: getCollection,
     getItem: getItem,
     createItem: createItem,
+    deleteItem: deleteItem,
     createUser: createUser,
 };
