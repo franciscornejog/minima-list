@@ -71,6 +71,18 @@ const updateItem = (req, res, next) => {
     });
 }
 
+const updateDate = (req, res, next) => {
+    const query = 'UPDATE items SET created = CURRENT_TIMESTAMP WHERE id = $1;';
+    db.none(query, [req.params.id])
+    .then(() => res.redirect('/collection'))
+    .catch(err => {
+        req.flash('error', err.message);
+        res.redirect('/collection');
+        next(err);
+    });
+}
+
+
 const deleteItem = (req, res, next) => {
     const query = 'DELETE FROM items WHERE id = $1;';
     db.none(query, [req.params.id])
@@ -103,5 +115,6 @@ module.exports = {
     createItem: createItem,
     updateItem: updateItem,
     deleteItem: deleteItem,
+    updateDate: updateDate,
     createUser: createUser,
 };

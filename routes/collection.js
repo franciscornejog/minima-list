@@ -14,4 +14,6 @@ router.put('/:id', auth.verify, db.updateItem);
 
 router.get('/:id/edit', auth.verify, db.getItemToEdit);
 
+router.post('/:id/reset', auth.verify, db.updateDate);
+
 module.exports = router;
