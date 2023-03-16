@@ -21,7 +21,7 @@ app.use(flash());
 app.use(methodOverride('_method')); // for forms
 app.use(sanitizer());
 app.use(session({
-    secret: 'some_secret',
+    secret: process.env.SECRET_SESSION,
     resave: false,
     saveUninitialized: false,
 }));
