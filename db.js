@@ -1,16 +1,8 @@
 const pgp = require('pg-promise')();
 const moment = require('moment');
 const passport = require('./auth');
-
-const ip = process.env.IP;
-const port = process.env.DB_PORT;
-const username = process.env.USER;
-const password = process.env.DB_PASSWORD;
-const connectionString = `postgres://${username}:${password}@${ip}:${port}/minimalist`;
-console.log(connectionString);
-// const db = pgp('postgres://username:password@host:port/database');
-const db = pgp(connectionString);
-// create table users(username text not null primary key, password text not null);
+const db = pgp(process.env.DB_URL);
+// create table users(username text primary key, password text not null);
 // create table items(
 // id serial primary key,
 // name text not null,
