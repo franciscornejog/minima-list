@@ -1,15 +1,3 @@
-// Edit Item Route
-router.get("/:id/edit", middleware.isLoggedIn, function(req, res) {
-    Item.findById(req.params.id, function(err, foundItem) {
-        if(err || !foundItem) {
-            req.flash("error", err.message);
-            res.redirect("/collection");
-        } else {
-            res.render("collection/edit", {item: foundItem});
-        }
-    });
-});
-
 // Reset Item Route
 router.post("/:id/reset", middleware.isLoggedIn, function(req, res) {
     Item.findById(req.params.id, function(err, foundItem) {

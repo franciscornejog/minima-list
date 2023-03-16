@@ -33,6 +33,17 @@ const getItem = (req, res, next) => {
     });
 }
 
+const getItemToEdit = (req, res, next) => {
+    const query = 'SELECT * FROM items WHERE id = $1;';
+    db.one(query, [req.params.id])
+    .then(data => res.render('collection/edit', { item: data, moment: moment }))
+    .catch(err => {
+        req.flash('error', err.message);
+        res.redirect('/collection');
+        next(err);
+    });
+}
+
 const createItem = (req, res, next) => {
     const description = req.body.description || '';
     const quantity = req.body.quantity ? parseInt(req.body.quantity) : 0;
@@ -74,6 +85,7 @@ module.exports = {
     db: db,
     getCollection: getCollection,
     getItem: getItem,
+    getItemToEdit: getItemToEdit,
     createItem: createItem,
     deleteItem: deleteItem,
     createUser: createUser,

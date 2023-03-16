@@ -1,13 +1,13 @@
 <%- include('../partials/header.html'); %>
 
 <h1 class="title">edit item</h1>
-<form action="/collection/<%= item._id %>?_method=PUT" method="POST">
+<form action="/collection/<%= item.id %>?_method=PUT" method="POST">
     <input type="text" name="item[name]" value="<%= item.name %>">
     <input type="text" name="item[description]" value="<%= item.description %>">
     <input type="number" name="item[quantity]" min="1" step="1" value="<%= item.quantity %>">
     <input type="text" name="item[notes]" value="<%= item.notes %>">
     <div class="buttons">
-        <a class="btn go-back" href="/collection/<%= item._id %>">go back</a>
+        <a class="btn go-back" href="/collection/<%= item.id %>">go back</a>
         <input class="btn submit" type="submit" value="submit">
     </div>
 </form>
