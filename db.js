@@ -57,6 +57,20 @@ const createItem = (req, res, next) => {
     });
 }
 
+const updateItem = (req, res, next) => {
+    const description = req.body.description || '';
+    const quantity = req.body.quantity ? parseInt(req.body.quantity) : 0;
+    const notes = req.body.notes || '';
+    const query = 'UPDATE items SET name = $1, description = $2, quantity = $3, notes = $4 WHERE id = $5;';
+    db.none(query, [req.body.name, description, quantity, notes, req.params.id])
+    .then(() => res.redirect('/collection/' + req.params.id))
+    .catch(err => {
+        req.flash('error', err.message);
+        res.redirect('/collection');
+        next(err);
+    });
+}
+
 const deleteItem = (req, res, next) => {
     const query = 'DELETE FROM items WHERE id = $1;';
     db.none(query, [req.params.id])
@@ -87,6 +101,7 @@ module.exports = {
     getItem: getItem,
     getItemToEdit: getItemToEdit,
     createItem: createItem,
+    updateItem: updateItem,
     deleteItem: deleteItem,
     createUser: createUser,
 };

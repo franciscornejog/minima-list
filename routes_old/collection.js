@@ -13,16 +13,3 @@ router.post("/:id/reset", middleware.isLoggedIn, function(req, res) {
         }
     });
 });
-
-// Update Item Route
-router.put("/:id", middleware.isLoggedIn, function(req, res) {
-    Item.findByIdAndUpdate(req.params.id, req.body.item, function(err, updatedItem) {
-        if(err || !updatedItem) {
-            req.flash("error", err.message);
-            res.redirect("/collection");
-        } else {
-            res.redirect("/collection/" + req.params.id);
-        }
-    });
-});
-

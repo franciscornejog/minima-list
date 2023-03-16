@@ -2,10 +2,10 @@
 
 <h1 class="title">edit item</h1>
 <form action="/collection/<%= item.id %>?_method=PUT" method="POST">
-    <input type="text" name="item[name]" value="<%= item.name %>">
-    <input type="text" name="item[description]" value="<%= item.description %>">
-    <input type="number" name="item[quantity]" min="1" step="1" value="<%= item.quantity %>">
-    <input type="text" name="item[notes]" value="<%= item.notes %>">
+    <input type="text" name="name" value="<%= item.name %>">
+    <input type="text" name="description" value="<%= item.description %>">
+    <input type="number" name="quantity" min="1" step="1" value="<%= item.quantity %>">
+    <input type="text" name="notes" value="<%= item.notes %>">
     <div class="buttons">
         <a class="btn go-back" href="/collection/<%= item.id %>">go back</a>
         <input class="btn submit" type="submit" value="submit">
