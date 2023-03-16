@@ -26,22 +26,14 @@ const getItem = (req, res, next) => {
     const query = 'SELECT * FROM items WHERE id = $1;';
     db.one(query, [req.params.id])
     .then(data => res.render('collection/show', { item: data, moment: moment }))
-    .catch(err => {
-        req.flash('error', err.message);
-        res.redirect('/collection');
-        next(err);
-    });
+    .catch(err => next(err));
 }
 
 const getItemToEdit = (req, res, next) => {
     const query = 'SELECT * FROM items WHERE id = $1;';
     db.one(query, [req.params.id])
     .then(data => res.render('collection/edit', { item: data, moment: moment }))
-    .catch(err => {
-        req.flash('error', err.message);
-        res.redirect('/collection');
-        next(err);
-    });
+    .catch(err => next(err));
 }
 
 const createItem = (req, res, next) => {
@@ -51,10 +43,7 @@ const createItem = (req, res, next) => {
     const query = 'INSERT INTO items(name, description, quantity, notes, author) VALUES($1, $2, $3, $4, $5);'
     db.none(query, [req.body.name, description, quantity, notes, req.user.username])
     .then(() => res.redirect('/collection'))
-    .catch(err => {
-        req.flash('error', err.message);
-        next(err);
-    });
+    .catch(err => next(err));
 }
 
 const updateItem = (req, res, next) => {
@@ -64,22 +53,14 @@ const updateItem = (req, res, next) => {
     const query = 'UPDATE items SET name = $1, description = $2, quantity = $3, notes = $4 WHERE id = $5;';
     db.none(query, [req.body.name, description, quantity, notes, req.params.id])
     .then(() => res.redirect('/collection/' + req.params.id))
-    .catch(err => {
-        req.flash('error', err.message);
-        res.redirect('/collection');
-        next(err);
-    });
+    .catch(err => next(err));
 }
 
 const updateDate = (req, res, next) => {
     const query = 'UPDATE items SET created = CURRENT_TIMESTAMP WHERE id = $1;';
     db.none(query, [req.params.id])
     .then(() => res.redirect('/collection'))
-    .catch(err => {
-        req.flash('error', err.message);
-        res.redirect('/collection');
-        next(err);
-    });
+    .catch(err => next(err));
 }
 
 
@@ -90,10 +71,7 @@ const deleteItem = (req, res, next) => {
         req.flash('success', 'item deleted');
         res.redirect('/collection');
     })
-    .catch(err => {
-        req.flash('error', err.message);
-        res.redirect('/collection');
-    });
+    .catch(err => next(err));
 }
 
 const createUser = (req, res, next) => {

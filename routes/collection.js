@@ -16,4 +16,9 @@ router.get('/:id/edit', auth.verify, db.getItemToEdit);
 
 router.post('/:id/reset', auth.verify, db.updateDate);
 
+router.use((err, req, res, next) => {
+    req.flash('error', err.message);
+    res.redirect('/collection');
+});
+
 module.exports = router;
